@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Производство — BeverageFlow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <a class="logo" href="index.html">
+            <span>BF</span>
+            <span>BeverageFlow</span>
+        </a>
+
+        <nav class="links">
+            <a data-nav href="index.html">Главная</a>
+            <a data-nav href="catalog.html">Каталог</a>
+            <a data-nav href="order.html">Заказ</a>
+            <a data-nav href="production.html">Производство</a>
+            <a data-nav href="docs.html">Документы</a>
+            <a data-nav href="admin.html">Админ</a>
+        </nav>
+
+        <a class="btn secondary" href="login.html" data-user>Войти</a>
+        <a class="btn primary" href="order.html">
+            Заявки: <span data-count>0</span>
+        </a>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+        <!-- Заголовок и кнопка создания заявки -->
+        <div class="section-head">
+            <div>
+                <div class="kicker">Производство</div>
+                <h1>План заказов и загрузка цеха</h1>
+            </div>
+            <a class="btn primary" href="order.html">Создать заявку</a>
+        </div>
+
+        <!-- Карточки с производственными показателями -->
+        <div class="grid3" style="margin-bottom:24px">
+            <div class="card">
+                <div class="icon">📦</div>
+                <h3 id="sumLiters">0 л</h3>
+                <p>общий объем заказов</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏭</div>
+                <h3 id="busy">0%</h3>
+                <p>загрузка линии</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🚚</div>
+                <h3 id="shipped">0</h3>
+                <p>отгружено</p>
+            </div>
+        </div>
+
+        <!-- Таймлайн производства -->
+        <div class="timeline" id="timeline"></div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo">
+                    <span>BF</span>
+                    <span>BeverageFlow</span>
+                </div>
+                <p>B2B-платформа для приема оптовых заказов на производство напитков и доставку.</p>
+            </div>
+
+            <div>
+                <h3>Разделы</h3>
+                <a href="catalog.html">Каталог</a>
+                <a href="order.html">Заказ</a>
+                <a href="production.html">Производство</a>
+            </div>
+
+            <div>
+                <h3>Клиентам</h3>
+                <a href="login.html">Регистрация</a>
+                <a href="docs.html">Документы</a>
+                <a href="admin.html">Админ</a>
+            </div>
+
+            <div>
+                <h3>Контакты</h3>
+                <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+                <a href="mailto:sales@beverageflow.ru">sales@beverageflow.ru</a>
+            </div>
+        </div>
+
+        <p class="muted">© 2026 BeverageFlow.</p>
+    </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

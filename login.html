@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вход — BeverageFlow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <a class="logo" href="index.html">
+            <span>BF</span>
+            <span>BeverageFlow</span>
+        </a>
+
+        <nav class="links">
+            <a data-nav href="index.html">Главная</a>
+            <a data-nav href="catalog.html">Каталог</a>
+            <a data-nav href="order.html">Заказ</a>
+            <a data-nav href="production.html">Производство</a>
+            <a data-nav href="docs.html">Документы</a>
+            <a data-nav href="admin.html">Админ</a>
+        </nav>
+
+        <a class="btn secondary" href="login.html" data-user>Войти</a>
+        <a class="btn primary" href="order.html">
+            Заявки: <span data-count>0</span>
+        </a>
+    </div>
+</header>
+
+<main class="section" id="auth">
+    <div class="container auth">
+        <!-- Блок с информацией о личном кабинете -->
+        <div class="card" style="background:linear-gradient(135deg,#0f766e,#0f172a);color:white">
+            <div class="kicker" style="color:#ccfbf1">Личный кабинет</div>
+            <h1>Вход для клиентов и администратора</h1>
+            <p>Учетные записи сохраняются через PHP API в серверной JSON-БД.</p>
+            <button id="demo" class="btn soft">Демо-вход администратора</button>
+            <p><small>admin@beverageflow.ru / admin123</small></p>
+        </div>
+
+        <!-- Блок с формами входа и регистрации -->
+        <div class="card">
+            <!-- Вкладки -->
+            <div class="tabs">
+                <button class="active" data-tab="login">Вход</button>
+                <button data-tab="register">Регистрация</button>
+            </div>
+
+            <!-- Форма входа -->
+            <form id="loginForm" data-form="login">
+                <div class="field">
+                    <label>Email</label>
+                    <input id="loginEmail" type="email" required placeholder="admin@beverageflow.ru">
+                </div>
+
+                <div class="field">
+                    <label>Пароль</label>
+                    <input id="loginPass" type="password" required placeholder="admin123">
+                </div>
+
+                <button class="btn primary" style="width:100%">Войти</button>
+            </form>
+
+            <!-- Форма регистрации (изначально скрыта) -->
+            <form id="regForm" class="hidden" data-form="register">
+                <div class="field">
+                    <label>Компания</label>
+                    <input id="regCompany" required>
+                </div>
+
+                <div class="field">
+                    <label>Email</label>
+                    <input id="regEmail" type="email" required>
+                </div>
+
+                <div class="field">
+                    <label>Пароль</label>
+                    <input id="regPass" type="password" minlength="6" required>
+                </div>
+
+                <button class="btn primary" style="width:100%">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo">
+                    <span>BF</span>
+                    <span>BeverageFlow</span>
+                </div>
+                <p>B2B-платформа для приема оптовых заказов на производство напитков и доставку.</p>
+            </div>
+
+            <div>
+                <h3>Разделы</h3>
+                <a href="catalog.html">Каталог</a>
+                <a href="order.html">Заказ</a>
+                <a href="production.html">Производство</a>
+            </div>
+
+            <div>
+                <h3>Клиентам</h3>
+                <a href="login.html">Регистрация</a>
+                <a href="docs.html">Документы</a>
+                <a href="admin.html">Админ</a>
+            </div>
+
+            <div>
+                <h3>Контакты</h3>
+                <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+                <a href="mailto:sales@beverageflow.ru">sales@beverageflow.ru</a>
+            </div>
+        </div>
+
+        <p class="muted">© 2026 BeverageFlow.</p>
+    </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

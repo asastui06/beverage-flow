@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Заказ — BeverageFlow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <a class="logo" href="index.html">
+            <span>BF</span>
+            <span>BeverageFlow</span>
+        </a>
+
+        <nav class="links">
+            <a data-nav href="index.html">Главная</a>
+            <a data-nav href="catalog.html">Каталог</a>
+            <a data-nav href="order.html">Заказ</a>
+            <a data-nav href="production.html">Производство</a>
+            <a data-nav href="docs.html">Документы</a>
+            <a data-nav href="admin.html">Админ</a>
+        </nav>
+
+        <a class="btn secondary" href="login.html" data-user>Войти</a>
+        <a class="btn primary" href="order.html">
+            Заявки: <span data-count>0</span>
+        </a>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container two">
+        <!-- Левая колонка: форма заказа -->
+        <section>
+            <div class="kicker">Калькулятор заказа</div>
+            <h1>Оформление оптовой заявки</h1>
+            <p class="lead">
+                Система рассчитывает бутылки, паллеты, вес, доставку и дату готовности.
+            </p>
+
+            <form id="orderForm" class="card">
+                <div class="calc">
+                    <div class="field">
+                        <label>Компания</label>
+                        <input id="company" required placeholder="ООО «Пример»">
+                    </div>
+
+                    <div class="field">
+                        <label>Email</label>
+                        <input id="email" required type="email" placeholder="buy@example.ru">
+                    </div>
+
+                    <div class="field">
+                        <label>Напиток</label>
+                        <select id="product"></select>
+                    </div>
+
+                    <div class="field">
+                        <label>Объем, л</label>
+                        <input id="liters" type="number" min="100" value="2500" step="50">
+                    </div>
+
+                    <div class="field">
+                        <label>Регион</label>
+                        <select id="region">
+                            <option value="moscow">Москва и МО</option>
+                            <option value="central">Центральный ФО</option>
+                            <option value="volga">Приволжский ФО</option>
+                            <option value="south">Южный ФО</option>
+                            <option value="pickup">Самовывоз</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Комментарий</label>
+                        <input placeholder="этикетка, дата отгрузки">
+                    </div>
+                </div>
+
+                <p class="notice" id="notice">Расчет обновляется автоматически.</p>
+                <button class="btn primary" type="submit">Сохранить заявку</button>
+            </form>
+
+            <div id="success" class="ok hidden" style="margin-top:16px">
+                Заявка № <b id="number"></b> сохранена.
+            </div>
+        </section>
+
+        <!-- Правая колонка: итоги расчета -->
+        <aside class="card summary">
+            <div class="kicker">Итоги расчета</div>
+            <h2>Параметры партии</h2>
+
+            <div class="row">
+                <span>Продукция</span>
+                <b id="totalPrice">0 ₽</b>
+            </div>
+
+            <div class="row">
+                <span>Бутылок</span>
+                <b id="bottles">0</b>
+            </div>
+
+            <div class="row">
+                <span>Паллет</span>
+                <b id="pallets">0</b>
+            </div>
+
+            <div class="row">
+                <span>Вес</span>
+                <b id="weight">0 кг</b>
+            </div>
+
+            <div class="row">
+                <span>Доставка</span>
+                <b id="delivery">0 ₽</b>
+            </div>
+
+            <div class="row">
+                <span>Готовность</span>
+                <b id="ready">—</b>
+            </div>
+
+            <div class="row">
+                <span>Итого</span>
+                <b class="total" id="grand">0 ₽</b>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo">
+                    <span>BF</span>
+                    <span>BeverageFlow</span>
+                </div>
+                <p>B2B-платформа для приема оптовых заказов на производство напитков и доставку.</p>
+            </div>
+
+            <div>
+                <h3>Разделы</h3>
+                <a href="catalog.html">Каталог</a>
+                <a href="order.html">Заказ</a>
+                <a href="production.html">Производство</a>
+            </div>
+
+            <div>
+                <h3>Клиентам</h3>
+                <a href="login.html">Регистрация</a>
+                <a href="docs.html">Документы</a>
+                <a href="admin.html">Админ</a>
+            </div>
+
+            <div>
+                <h3>Контакты</h3>
+                <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+                <a href="mailto:sales@beverageflow.ru">sales@beverageflow.ru</a>
+            </div>
+        </div>
+
+        <p class="muted">© 2026 BeverageFlow.</p>
+    </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

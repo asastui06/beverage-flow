@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Админ-панель — BeverageFlow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <a class="logo" href="index.html">
+            <span>BF</span>
+            <span>BeverageFlow</span>
+        </a>
+
+        <nav class="links">
+            <a data-nav href="index.html">Главная</a>
+            <a data-nav href="catalog.html">Каталог</a>
+            <a data-nav href="order.html">Заказ</a>
+            <a data-nav href="production.html">Производство</a>
+            <a data-nav href="docs.html">Документы</a>
+            <a data-nav href="admin.html">Админ</a>
+        </nav>
+
+        <a class="btn secondary" href="login.html" data-user>Войти</a>
+        <a class="btn primary" href="order.html">
+            Заявки: <span data-count>0</span>
+        </a>
+    </div>
+</header>
+
+<main class="section" id="admin">
+    <div class="container">
+        <!-- Заголовок админ-панели -->
+        <div class="section-head">
+            <div>
+                <div class="kicker">Администрирование</div>
+                <h1>Панель управления BeverageFlow</h1>
+            </div>
+            <button id="export" class="btn secondary">Экспорт JSON</button>
+        </div>
+
+        <!-- Уведомление о правах доступа -->
+        <div id="adminNotice" class="notice hidden" style="margin-bottom:18px">
+            Нет прав администратора.
+            <button id="demoAdmin" class="btn soft">Включить демо-доступ</button>
+        </div>
+
+        <!-- Основной блок админки -->
+        <div class="admin">
+            <!-- Левая колонка: модули -->
+            <aside class="card side">
+                <h3>Модули</h3>
+                <button class="active" data-admin="orders">Заказы</button>
+                <button data-admin="products">Продукция</button>
+                <button data-admin="clients">Клиенты</button>
+            </aside>
+
+            <!-- Правая колонка: контент модулей -->
+            <section>
+                <!-- Панель: Заказы -->
+                <div data-panel="orders">
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Заказ</th>
+                                    <th>Клиент</th>
+                                    <th>Партия</th>
+                                    <th>Сумма</th>
+                                    <th>Статус</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Панель: Продукция (изначально скрыта) -->
+                <div class="hidden" data-panel="products">
+                    <!-- Форма добавления продукта -->
+                    <form id="addProduct" class="card" style="margin-bottom:18px">
+                        <h3>Добавить напиток</h3>
+
+                        <div class="calc">
+                            <div class="field">
+                                <label>Название</label>
+                                <input id="newName" required>
+                            </div>
+
+                            <div class="field">
+                                <label>Тип</label>
+                                <select id="newType">
+                                    <option value="carbonated">Газированный</option>
+                                    <option value="noncarbonated">Негазированный</option>
+                                    <option value="tea">Чай</option>
+                                    <option value="energy">Энергетик</option>
+                                    <option value="water">Вода</option>
+                                    <option value="juice">Сокосодержащий</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label>Тара, л</label>
+                                <input id="newVol" type="number" step="0.01" value="1">
+                            </div>
+
+                            <div class="field">
+                                <label>Цена, ₽/л</label>
+                                <input id="newPrice" type="number" value="150">
+                            </div>
+
+                            <div class="field">
+                                <label>Мин., л</label>
+                                <input id="newMin" type="number" value="100">
+                            </div>
+
+                            <div class="field">
+                                <label>Описание</label>
+                                <input id="newDesc">
+                            </div>
+                        </div>
+
+                        <button class="btn primary">Добавить</button>
+                    </form>
+
+                    <!-- Таблица продуктов -->
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Название</th>
+                                    <th>Тип</th>
+                                    <th>Тара</th>
+                                    <th>Цена</th>
+                                    <th>Мин.</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Панель: Клиенты (изначально скрыта) -->
+                <div class="hidden" data-panel="clients">
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Компания</th>
+                                    <th>Email</th>
+                                    <th>Заказов</th>
+                                    <th>Литраж</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo">
+                    <span>BF</span>
+                    <span>BeverageFlow</span>
+                </div>
+                <p>B2B-платформа для приема оптовых заказов на производство напитков и доставку.</p>
+            </div>
+
+            <div>
+                <h3>Разделы</h3>
+                <a href="catalog.html">Каталог</a>
+                <a href="order.html">Заказ</a>
+                <a href="production.html">Производство</a>
+            </div>
+
+            <div>
+                <h3>Клиентам</h3>
+                <a href="login.html">Регистрация</a>
+                <a href="docs.html">Документы</a>
+                <a href="admin.html">Админ</a>
+            </div>
+
+            <div>
+                <h3>Контакты</h3>
+                <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+                <a href="mailto:sales@beverageflow.ru">sales@beverageflow.ru</a>
+            </div>
+        </div>
+
+        <p class="muted">© 2026 BeverageFlow.</p>
+    </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Каталог — BeverageFlow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <a class="logo" href="index.html">
+            <span>BF</span>
+            <span>BeverageFlow</span>
+        </a>
+
+        <nav class="links">
+            <a data-nav href="index.html">Главная</a>
+            <a data-nav href="catalog.html">Каталог</a>
+            <a data-nav href="order.html">Заказ</a>
+            <a data-nav href="production.html">Производство</a>
+            <a data-nav href="docs.html">Документы</a>
+            <a data-nav href="admin.html">Админ</a>
+        </nav>
+
+        <a class="btn secondary" href="login.html" data-user>Войти</a>
+        <a class="btn primary" href="order.html">
+            Заявки: <span data-count>0</span>
+        </a>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+        <!-- Заголовок каталога -->
+        <div class="section-head">
+            <div>
+                <div class="kicker">Каталог</div>
+                <h1>Напитки для оптовых заказов</h1>
+            </div>
+            <p id="count">Найдено позиций: 0</p>
+        </div>
+
+        <!-- Блок фильтрации -->
+        <div class="filters">
+            <div class="field">
+                <label>Поиск</label>
+                <input id="search" placeholder="лимонад, морс, вода">
+            </div>
+
+            <div class="field">
+                <label>Тип</label>
+                <select id="type">
+                    <option value="all">Все</option>
+                    <option value="carbonated">Газированные</option>
+                    <option value="noncarbonated">Негазированные</option>
+                    <option value="tea">Чай</option>
+                    <option value="energy">Энергетики</option>
+                    <option value="water">Вода</option>
+                    <option value="juice">Сокосодержащие</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Цена до, ₽/л</label>
+                <input id="maxprice" type="number" value="999">
+            </div>
+
+            <div class="field">
+                <label>Сортировка</label>
+                <select id="sort">
+                    <option value="rating">По рейтингу</option>
+                    <option value="price-asc">Сначала дешевле</option>
+                    <option value="price-desc">Сначала дороже</option>
+                    <option value="min">По минимуму</option>
+                </select>
+            </div>
+
+            <button id="reset" class="btn secondary">Сбросить</button>
+        </div>
+
+        <!-- Сетка товаров -->
+        <div class="product-grid" id="catalog"></div>
+
+        <!-- Пагинация -->
+        <div class="pagination" id="pages"></div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo">
+                    <span>BF</span>
+                    <span>BeverageFlow</span>
+                </div>
+                <p>B2B-платформа для приема оптовых заказов на производство напитков и доставку.</p>
+            </div>
+
+            <div>
+                <h3>Разделы</h3>
+                <a href="catalog.html">Каталог</a>
+                <a href="order.html">Заказ</a>
+                <a href="production.html">Производство</a>
+            </div>
+
+            <div>
+                <h3>Клиентам</h3>
+                <a href="login.html">Регистрация</a>
+                <a href="docs.html">Документы</a>
+                <a href="admin.html">Админ</a>
+            </div>
+
+            <div>
+                <h3>Контакты</h3>
+                <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+                <a href="mailto:sales@beverageflow.ru">sales@beverageflow.ru</a>
+            </div>
+        </div>
+
+        <p class="muted">© 2026 BeverageFlow.</p>
+    </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

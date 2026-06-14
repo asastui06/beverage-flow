@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Главная — BeverageFlow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <a class="logo" href="index.html">
+            <span>BF</span>
+            <span>BeverageFlow</span>
+        </a>
+
+        <nav class="links">
+            <a data-nav href="index.html">Главная</a>
+            <a data-nav href="catalog.html">Каталог</a>
+            <a data-nav href="order.html">Заказ</a>
+            <a data-nav href="production.html">Производство</a>
+            <a data-nav href="docs.html">Документы</a>
+            <a data-nav href="admin.html">Админ</a>
+        </nav>
+
+        <a class="btn secondary" href="login.html" data-user>Войти</a>
+        <a class="btn primary" href="order.html">
+            Заявки: <span data-count>0</span>
+        </a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero секция -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="kicker">Оптовые напитки под заказ</div>
+                <h1>Платформа для заказа, производства и доставки напитков</h1>
+                <p class="lead">
+                    BeverageFlow помогает B2B-клиентам рассчитать партию напитков, увидеть сроки готовности
+                    и передать заказ в производство без ручных переписок.
+                </p>
+
+                <a class="btn primary" href="catalog.html">Выбрать напитки</a>
+                <a class="btn secondary" href="order.html">Рассчитать заказ</a>
+
+                <div class="stats">
+                    <div class="card stat">
+                        <strong>3 000 л</strong>
+                        <span>мощность линии в день</span>
+                    </div>
+                    <div class="card stat">
+                        <strong>24/7</strong>
+                        <span>прием заявок онлайн</span>
+                    </div>
+                    <div class="card stat">
+                        <strong>JSON</strong>
+                        <span>экспорт для учета</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="bottles">
+                    <div class="bottle" style="--h:250px" data-label="Лимонад"></div>
+                    <div class="bottle" style="--h:330px" data-label="Морс"></div>
+                    <div class="bottle" style="--h:285px" data-label="Вода"></div>
+                </div>
+                <div class="note">
+                    <b>Order-to-Production</b><br>
+                    Заявка → расчет → план производства → доставка.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция возможностей -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">Возможности</div>
+                    <h2>Ключевые модули системы</h2>
+                </div>
+                <p>Данные сохраняются через PHP API в серверной JSON-БД, а расчеты выполняются на JavaScript и PHP.</p>
+            </div>
+
+            <div class="grid4">
+                <div class="card">
+                    <div class="icon">🧃</div>
+                    <h3>Каталог</h3>
+                    <p>Поиск, фильтры, сортировка и карточки напитков.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🧮</div>
+                    <h3>Калькулятор</h3>
+                    <p>Цена, бутылки, паллеты, вес, доставка, дата готовности.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🏭</div>
+                    <h3>Производство</h3>
+                    <p>Заказы и статусы производственной цепочки.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🗂️</div>
+                    <h3>Админ</h3>
+                    <p>Товары, клиенты, статусы и экспорт JSON.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция популярных позиций -->
+    <section class="section" style="padding-top:0">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">Ассортимент</div>
+                    <h2>Популярные позиции</h2>
+                </div>
+                <a class="btn soft" href="catalog.html">Весь каталог</a>
+            </div>
+
+            <div class="product-grid" id="featured"></div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo">
+                    <span>BF</span>
+                    <span>BeverageFlow</span>
+                </div>
+                <p>B2B-платформа для приема оптовых заказов на производство напитков и доставку.</p>
+            </div>
+
+            <div>
+                <h3>Разделы</h3>
+                <a href="catalog.html">Каталог</a>
+                <a href="order.html">Заказ</a>
+                <a href="production.html">Производство</a>
+            </div>
+
+            <div>
+                <h3>Клиентам</h3>
+                <a href="login.html">Регистрация</a>
+                <a href="docs.html">Документы</a>
+                <a href="admin.html">Админ</a>
+            </div>
+
+            <div>
+                <h3>Контакты</h3>
+                <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+                <a href="mailto:sales@beverageflow.ru">sales@beverageflow.ru</a>
+            </div>
+        </div>
+
+        <p class="muted">© 2026 BeverageFlow.</p>
+    </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
